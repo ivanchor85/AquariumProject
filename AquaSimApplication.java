@@ -23,7 +23,7 @@ public class AquaSimApplication
      **/
     public static void main(String args[])
     {
-        System.out.println("This will be an aquarium simulation.");
+        System.out.println("Aquarium Simulation starts in: 5 Minutes");
 
         // CONSTRUCT OBJECTS NEEDED FOR THE AQUARIUM SIMULATION.
 
