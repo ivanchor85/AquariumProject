@@ -29,7 +29,7 @@ public class AquaSimApplication
 
         // Construct the aquarium.  Specify its dimensions when creating it.
         Aquarium aqua;                 // create reference to an Aquarium ...
-        aqua = new Aquarium(600, 480); // ... object that has now been created
+        aqua = new Aquarium(500, 1000); // ... object that has now been created
 
         // Construct fish and add them to the aquarium.
         AquaFish Bee = new AquaFish(aqua);
@@ -64,11 +64,21 @@ public class AquaSimApplication
         // RUN THE AQUARIUM SIMULATION.
 
         // Make the fish move and redisplay.
+        for(int i=0;i<20;i--){
         Bee.moveForward();
+        if(Bee.atWall()){
+            Bee.changeDir();}
+            
         Joe.moveForward();
+        if(Joe.atWall()){
+            Joe.changeDir();}
+            
         Tree.moveForward();
+        if(Tree.atWall()){
+            Tree.changeDir();}
 
-        userInterface.showAquarium();
+        userInterface.showAquarium();}
+        
         // WRAP UP.
 
         // Remind user how to quit application.
