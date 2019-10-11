@@ -35,6 +35,9 @@ public class AquaSimApplication
         Aquarium aqua;                 // create reference to an Aquarium ...
         aqua = new Aquarium(700, 700); // ... object that has now been created
      
+        
+        
+       
         // Construct fish and add them to the aquarium.
         
         AquaFish Bee = new AquaFish(aqua, getColor());
@@ -63,7 +66,7 @@ public class AquaSimApplication
         // the simulation.  The user interface needs to know about the
         // aquarium, so we pass aqua to the user interface constructor.
         AquaSimGUI userInterface;              // create reference to GUI ...
-        userInterface = new AquaSimGUI(aqua);  // ... and then GUI itself
+        userInterface = new AquaSimGUI(aqua, true);  // ... and then GUI itself
 
         // Tell the user how to start the aquarium simulation.
         System.out.println("Press the Start button to start the simulation.");
@@ -78,7 +81,10 @@ public class AquaSimApplication
         // RUN THE AQUARIUM SIMULATION.
 
         // Make the fish move and redisplay.
-        for(int i=0;i<20;i--){
+        
+        int b = userInterface.getNumberOfSteps();
+        
+        for(int i=0;i<b;i++){
         Bee.moveForward();
         
         if(Bee.atWall())
